@@ -53,10 +53,10 @@ public class AddressDaoTest
     public void testShouldSaveAndRemoveAddress() {
         // given
         AddressEntity addressEntity = new AddressEntity();
-        addressEntity.setAddressLine1("line1");
-        addressEntity.setAddressLine2("line2");
-        addressEntity.setCity("City1");
-        addressEntity.setPostalCode("66-666");
+        addressEntity.setAddressLine1("Sienkiewicza");
+        addressEntity.setAddressLine2("2");
+        addressEntity.setCity("Wroclaw");
+        addressEntity.setPostalCode("50-000");
 
         // when
         final AddressEntity saved = addressDao.save(addressEntity);
