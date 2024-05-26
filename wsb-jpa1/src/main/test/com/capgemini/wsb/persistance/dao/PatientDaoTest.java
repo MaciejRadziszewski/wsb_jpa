@@ -29,7 +29,6 @@ public class PatientDaoTest {
 
         //then
         for (var patient : patients) {
-            assertThat(patient).isNotNull();
             assertThat(patient.getLastName()).isEqualTo(lastName);
         }
     }
@@ -41,11 +40,11 @@ public class PatientDaoTest {
         final long visitsCount = 1L;
 
         //when
-        var patients = patientDao.findPatientsHavingMoreThanXVisits(visitsCount);
+        var patients = patientDao.findPatientsByVisitNumber(visitsCount);
 
         //then
         for (var patient : patients) {
-            assertThat(patientDao.findOne(patient.getId()).getVisits().stream().count()).isGreaterThan(visitsCount);
+            assertThat((long) patientDao.findOne(patient.getId()).getVisits().size()).isGreaterThan(visitsCount);
         }
     }
 

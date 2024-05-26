@@ -11,9 +11,7 @@ public class VisitDaoImpl extends AbstractDao<VisitEntity, Long> implements Visi
 
     @Override
     public List<VisitEntity> findByPatientId(Long patientId) {
-        return entityManager.createQuery("select visit from VisitEntity visit " +
-                        "join visit.patient patient" +
-                        " where patient.id = :param1", VisitEntity.class)
+        return entityManager.createQuery("select visit from VisitEntity visit join visit.patient patient where patient.id = :param1", VisitEntity.class)
                 .setParameter("param1", patientId)
                 .getResultList();
     }

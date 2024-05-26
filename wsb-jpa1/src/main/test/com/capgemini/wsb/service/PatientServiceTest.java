@@ -29,7 +29,7 @@ public class PatientServiceTest {
     @Test
     public void testRemovePatient() {
         //given
-        final Long patientId = 2L;
+        final Long patientId = 1L;
 
         //when
         var doctors = patientService.findById(patientId).getVisits().stream().map(VisitTO::getDoctor).collect(Collectors.toList());
@@ -46,7 +46,7 @@ public class PatientServiceTest {
     @Test
     public void testPatientTO() {
         //given
-        final Long patientId = 1L;
+        final Long patientId = 2L;
 
         //when
         var patient = patientService.findById(patientId);

@@ -9,7 +9,7 @@ public interface PatientDao extends Dao<PatientEntity, Long> {
 
     List<PatientEntity> findByLastName(String lastName);
 
-    List<PatientEntity> findPatientsHavingMoreThanXVisits(long x);
+    List<PatientEntity> findPatientsByVisitNumber(long visits);
 
     List<PatientEntity> findPatientsBySex(Sex s);
 }
